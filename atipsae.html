@@ -1,0 +1,73 @@
+<!-- please reference http://nodered.org/docs/creating-nodes/node-html -->
+
+<script type="text/x-red" data-template-name="atipsae">
+	<div class="form-row">
+        <label for="node-input-serial"><i class="fa fa-tasks"></i> SerialPort</label>
+        <input type="text" id="node-input-serial" placeholder="COM1">
+    </div>
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="atipsae">
+    <p>IPS-AE node can set variables to device(input) and send(output) automatically.</p>
+	<br />
+	<p>The Properity "SerialPort" is needed. ex. COM1</p>
+	<p>The inputs must be <code>msg.payload.UPSDCinLostDelayTime</code> and <code>msg.payload.UPSDCoutCutOffDelayTime</code> which are numeric.</p>
+	<p><code>msg.payload.UPSDCinLostDelayTime</code> is a number which is the DC Input Lost detection duration(sec).</p>
+	<p><code>msg.payload.UPSDCoutCutOffDelayTime</code> is a number which is the DC-OUT cut-off delay time(minutes).</p>
+	<p>Another input <code>msg.payload.port</code> is COM port name which is used to connect with UPS.</p>
+	<br />
+	<p>There are 3 outputs, <b>Emergency</b>, <b>Status</b> and <b>Response</b>.</p>
+	<br />
+	<p>The <b>Emergency</b> output is a string and consists of the following.</p>
+	<p><code>"DC-IN is Losted"</code></p>
+	<p><code>"Battery Over Temperature"</code></p>
+	<p><code>"Battery Gauge is Lost Connection"</code></p>
+	<p><code>"EEPROM Access Fail"</code></p>
+	<p><code>"DC-IN is Over Voltage"</code></p>
+	<p><code>"The DC-Out Cut-Off trigger"</code></p>
+	<p><code>"Restores power to IPS-AE DC-IN"</code></p>
+	<br />
+	<p>The <b>Status</b> output is a javascript object format in msg.payload and the object contents are as follows</p>
+	<p><code>fwversion</code> : DEVICE firmware version</p>
+	<p><code>ips</code> : the status of DEVICE. 1 is ready and 0 is not ready</p>
+	<p><code>dcin</code> : the status of DC-IN. 1 is ready and 0 is not ready</p>
+	<p><code>battery</code> : the status of BATTERY. 1 is ready and 0 is not ready</p>
+	<p><code>inputlostdelay</code> : the DC Input Lost detection duration(sec)</p>
+	<p><code>cutoffdelay</code> :  the DC-OUT cut-off delay time(minutes)</p>
+	<p><code>batterylife</code> : BATTERY life(minutes) at the present rate of discharge. "65535" is BATTERY charged.</p>
+	<p><code>temperature</code> : BATTERY temperature(celsius)</p>
+	<p><code>maxtemperature</code> : It's the max temperature(celsius) of BATTERY from the system started.</p>
+	<p><code>batteryvoltage</code> : It's the the BATTERY voltage(mV).</p>
+	<p><code>capacity</code> : BATTERY capacity(%)</p>
+	<br />
+	<p>The <b>Response</b> output is a string to describe the input result.</p>
+	<br />
+	<p>Only currently supports <b>UNO-IPS2730</b>.</p>
+	<br /><br /><br /><br /><br />
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType('atipsae',{
+        category: 'Advantech_IIoT',
+        color:"darksalmon",
+		paletteLabel: "UPS",
+        defaults: {
+			serial: {value:""},
+            name: {value:""}
+        },
+        inputs:1,
+        outputs:3,
+        icon: "arrow-in.png",
+        align: "right",
+        label: function() {
+            return this.name||"UPS";
+        },
+        labelStyle: function() {
+            return this.name?"node_label_italic":"";
+        }
+    });
+</script>

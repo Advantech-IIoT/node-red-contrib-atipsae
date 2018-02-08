@@ -1,0 +1,29 @@
+{
+  "name": "node-red-contrib-atipsae",
+  "version": "1.1.8",
+  "description": "Advantech IPS-AE Nodes",
+  "main": "none",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+	"postinstall": "node postinstall.js",
+	"preinstall": "node preinstall.js"
+  },
+  "keywords": [
+    "UPS",
+	"UNO-IPS2730-AE",
+	"UNO-IPS2730",
+  "Advantech",
+  "IIoT"
+  ],
+  "node-red": {
+    "nodes": {
+      "atipsae": "atipsae.js"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Advantech-IIoT/node-red-contrib-atipsae"
+  },
+  "author": "Chic.Lee",
+  "license": "Apache-2.0"
+}
