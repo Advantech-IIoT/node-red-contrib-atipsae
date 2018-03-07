@@ -2,9 +2,9 @@
 Node-RED node for ADVANTECH IIoT [UNO-IPS2730-AE](http://www.advantech.com/products/1-2mlj2z/uno-ips2730-ae/mod_2ca60cb5-a216-4f76-accb-4c3108e8621e).
 
 Notice that an Advantech IIoT Platform SDK have to be installed to make this node works correctly.
-Advantech IIoT Platform SDK download link is shown below:
+Advantech IIoT Platform SDK download link is shown below:  
 Windows:
-  https://github.com/Advantech-IIoT/Platform-SDK/tree/master/windows/bin
+  https://github.com/Advantech-IIoT/Platform-SDK/tree/master/windows/bin  
 Linux:
   https://github.com/Advantech-IIoT/Platform-SDK/tree/master/linux/bin
 
