@@ -22,7 +22,7 @@
 	<br />
 	<p>There are 3 outputs, <b>Emergency</b>, <b>Status</b> and <b>Response</b>.</p>
 	<br />
-	<p>The <b>Emergency</b> output is a string and consists of the following.</p>
+	<p>* The <b>Emergency</b> output is a string and consists of the following.</p>
 	<p><code>"DC-IN is Losted"</code></p>
 	<p><code>"Battery Over Temperature"</code></p>
 	<p><code>"Battery Gauge is Lost Connection"</code></p>
@@ -31,7 +31,7 @@
 	<p><code>"The DC-Out Cut-Off trigger"</code></p>
 	<p><code>"Restores power to IPS-AE DC-IN"</code></p>
 	<br />
-	<p>The <b>Status</b> output is a javascript object format in msg.payload and the object contents are as follows</p>
+	<p>* The <b>Status</b> output is a javascript object format in msg.payload and the object contents are as follows</p>
 	<p><code>fwversion</code> : DEVICE firmware version</p>
 	<p><code>ips</code> : the status of DEVICE. 1 is ready and 0 is not ready</p>
 	<p><code>dcin</code> : the status of DC-IN. 1 is ready and 0 is not ready</p>
@@ -44,7 +44,7 @@
 	<p><code>batteryvoltage</code> : It's the the BATTERY voltage(mV).</p>
 	<p><code>capacity</code> : BATTERY capacity(%)</p>
 	<br />
-	<p>The <b>Response</b> output is a string to describe the input result.</p>
+	<p>* The <b>Response</b> output is a string to describe the input result.</p>
 	<br />
 	<p>Only currently supports <b>UNO-IPS2730</b>.</p>
 	<br /><br /><br /><br /><br />

@@ -22,9 +22,8 @@ npm install node-red-contrib-atipsae -g
 You must use the Node-RED with [UNO-IPS2730-AE](http://www.advantech.com/products/1-2mlj2z/uno-ips2730-ae/mod_2ca60cb5-a216-4f76-accb-4c3108e8621e).
 
 ## Example
-You can try demo flow  [(demo.json)](./demo.json) via import function from Node-RED editor.
-
-![node-red_node](./png/node-red_node.png)
+You can try demo flow  [demo.json](./demo.json) via import function from Node-RED editor.
+![demoflow](./demoflow.JPG)  
 
 The inputs must be [**msg.payload.UPSInputLostDelay**](./#) and [**msg.payload.UPSCutOffDelay**](./#) which are numeric.
 
@@ -82,10 +81,11 @@ The [**Response**](./#). output is a string to describe the input result.
 
 ---
 ## Tested Platform 
-- Windows 10 Enterprise LTSB with node.js 6.10.1
+- Windows 10 Enterprise LTSB with node.js 10.15.0
 
 ## History
+- 2.0.1 - November 2019 : update for NODE_MODULE_VERSION=64 
 - 1.1.7 - October 2017 : Initial Release
 
 ## License
-Copyright 2017 ADVANTECH Corp. under [the Apache 2.0 license](LICENSE).
+Copyright 2019 ADVANTECH Corp. under [the Apache 2.0 license](LICENSE).
