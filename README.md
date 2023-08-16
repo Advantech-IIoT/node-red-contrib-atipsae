@@ -3,8 +3,10 @@ Node-RED node for ADVANTECH IIoT [UNO-IPS2730-AE](http://www.advantech.com/produ
 
 Notice that an Advantech IIoT Platform SDK have to be installed to make this node works correctly.
 Advantech IIoT Platform SDK download link is shown below:  
+
 Windows:
   https://github.com/Advantech-IIoT/Platform-SDK/tree/master/windows/bin  
+
 Linux:
   https://github.com/Advantech-IIoT/Platform-SDK/tree/master/linux/bin
 
@@ -81,10 +83,11 @@ The [**Response**](./#). output is a string to describe the input result.
 
 ---
 ## Tested Platform 
-- Windows 10 Enterprise LTSB with node.js 10.15.0
+- Windows 10 Enterprise LTSC with node.js 18.14.1
 
 ## History
-- 2.0.1 - November 2019 : update for NODE_MODULE_VERSION=64 
+- 3.0.1 - June 2023 : update for NODE_MODULE_VERSION=108 (C++ addons use Node-API)
+- 2.0.1 - November 2019 : update for NODE_MODULE_VERSION=64 (C++ addons use Native Abstractions for Node.js)
 - 1.1.7 - October 2017 : Initial Release
 
 ## License
